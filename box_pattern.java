@@ -25,7 +25,20 @@ public class box_pattern {
 		      else System.out.print(" ");
 		    }
 		    System.out.println();
-		  }
+		 }
 	}
-
 }
+/*
+Sample Input :
+7
+2
+Sample Output :
+------- -------
+|  *  | |  *  |
+|  *  | |  *  |
+******* *******
+|  *  | |  *  |
+|  *  | |  *  |
+------- -------
+*/
+
