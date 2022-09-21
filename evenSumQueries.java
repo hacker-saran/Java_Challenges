@@ -26,13 +26,27 @@ class Solution {
     public int[] sumEvenAfterQueries(int[] nums, int[][] queries) {
         
         int[] ans = new int[nums.length];
+        int sum = sumOfEvens(nums);
         for(int i=0;i<queries.length;i++)
         {
             int ind = queries[i][1];
             int val = queries[i][0];
-            nums[ind] = nums[ind]+val;
             
-            ans[i]=sumOfEvens(nums);
+            if(nums[ind]%2!=0)
+            {
+                if((nums[ind]+val)%2==0)
+                    sum+=(nums[ind]+val);
+            }
+            else
+            {
+                if((nums[ind]+val)%2==0)
+                    sum+=val;
+                else
+                    sum-=nums[ind];
+            }
+            nums[ind]+=val;
+            
+            ans[i]=sum;
         }
         return ans;
         
